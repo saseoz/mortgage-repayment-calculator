@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <main class="container">
+    <div class="calc__max">
+      <div class="calc__wrap">
+        <form action="">
+          <div class="calc__title-stack">
+            <h1 class="calc__title">Mortgage Calculator</h1>
+            <button class="calc__reset-btn" type="reset">Clear All</button>
+          </div>
+
+          <div class="calc__mortgage-amount-wrap">
+            <label for="mortgage-amount">Mortgage Amount</label>
+            <div class="calc__mortgage-amount-stack">
+              <input type="text" name="mortgage-amount" id="mortgage-amount">            
+              <p class="calc__euro-sign">£</p>
+            </div>
+            <p class="error"></p>
+          </div>
+
+          <div class="calc__term-interest-stack">
+            <div class="calc__term-wrap">
+              <label for="term">Mortgage Term</label>
+              <div class="calc__term-stack">
+                <input type="number" name="term" id="term">
+                <p class="calc__term-year-text">years</p>
+              </div>
+              <p class="error"></p>
+            </div>
+            <div class="calc__interest-wrap">
+              <label for="interest">Interest Rate</label>
+              <div class="calc__interest-stack">
+                <input type="number" name="interest" id="interest" step="0.01">              
+                <p class="calc__interest-percent-text">%</p>
+              </div>
+              <p class="error"></p>
+            </div>
+          </div>
+
+          <div class="calc__radio-wrap">
+            <fieldset class="">
+              <legend>Mortgage Type</label>
+              <div class="calc__radio-stack">
+                <div>
+                  <label for="mortgage-repay">
+                    <input type="radio" name="mortgage-type" id="mortgage-repay" value="repayment">
+                    Repayment
+                  </label>
+                </div>
+                <div>
+                  <label for="mortgage-interest">
+                    <input type="radio" name="mortgage-type" id="mortgage-interest" value="interest">
+                    Interest Only
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <p class="error error-radio"></p>
+          </div>
+          
+          <div class="calc__btn-stack">
+            <button type="submit" class="calc__submit">
+              <img src="assets/images/icon-calculator.svg" alt="">
+              Calculate Repayments</button>
+          </div>
+        </form> 
+      </div> 
+    </div>
+
+    <div class="result__max">
+        <div class="result__wrap">
+          <img src="assets/images/illustration-empty.svg" alt="">
+          <h2 class="result__title">Results shown here</h2>
+          <p class="result__descr">Complete the form and click “calculate repayments” to see what 
+          your monthly repayments would be.</p>
+        </div>
+    </div>
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+</html>

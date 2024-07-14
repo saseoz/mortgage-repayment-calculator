@@ -1,0 +1,337 @@
+:root {
+    --Lime: hsl(61, 70%, 52%);
+    --Red: hsl(4, 69%, 50%);
+    --White: hsl(0, 0%, 100%);
+    --Slate100: hsl(202, 86%, 94%);
+    --Slate300: hsl(203, 41%, 72%);
+    --Slate500: hsl(200, 26%, 54%);
+    --Slate700: hsl(200, 24%, 40%);
+    --Slate900: hsl(202, 55%, 16%);
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+button {
+    font: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+}
+input, label, legend, button {
+    cursor: pointer;
+}
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    background-color: hsl(199, 81%, 94%);
+}
+.container {
+    width: 100%;
+    transition: all .3s ease;
+}
+/* calculator section general setting */
+.calc__max {
+    width: 100%;
+    background-color: var(--White);
+}
+.calc__wrap {
+    padding: 1.2rem;
+    max-width: 500px;
+    margin-inline: auto;
+}
+label, 
+legend {
+    color: var(--Slate700);
+    font-size: .9rem;
+}
+.calc__title, fieldset div label {
+    color: var(--Slate900); 
+    font-weight: 700;
+}
+form div + div {
+    margin-top: 1rem;
+}
+.error {
+    color: var(--Red);
+    font-size: .75rem;
+    font-weight: 500;
+    margin-top: .7rem;
+}
+/* calculator title section */
+.calc__title {
+    font-size: 1.4rem;
+    margin-bottom: .3em;
+}
+.calc__reset-btn {
+    color: var(--Slate700);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: .3s ease;
+}
+.calc__reset-btn:hover,
+.calc__reset-btn:focus {
+    font-weight: 700;
+}
+/* mortgage amount/term & interest rate sections */
+.calc__mortgage-amount-stack,
+.calc__term-stack,
+.calc__interest-stack {
+    height: 47px;    
+    margin-top: .7rem;
+    position: relative;
+}
+.calc__mortgage-amount-stack > *,
+.calc__term-stack > *,
+.calc__interest-stack > * {
+    height: 100%;
+}
+input[type="number"],
+[type="text"] {
+    width: 100%;
+    border: 1px solid var(--Slate500);
+    border-radius: .3rem;
+    outline: none;
+    padding-inline: 1rem;
+    cursor: pointer;
+    transition: border-color .3s ease;
+    color: var(--Slate900);
+    font-weight: 700;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+input[type="number"]:hover,
+input[type="number"]:focus,
+input[type="text"]:hover,
+input[type="text"]:focus {
+    border-color: var(--Lime);
+}
+input[type="number"]:hover + p,
+input[type="number"]:focus + p,
+input[type="text"]:hover + p,
+input[type="text"]:focus + p {
+    color: var(--Slate900);
+    background-color: var(--Lime);
+}
+input[type="number"] + p,
+input[type="text"] + p {
+    transition: background-color .3s ease, 
+                color .3s ease;
+}
+/* input slider remove Chrome, Safari, Edge, and Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button,
+input[type="text"]::-webkit-outer-spin-button,
+input[type="text"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* input slider remove Firefox */
+input[type="number"],
+input[type="text"]  {
+    -moz-appearance: textfield;
+}
+.calc__mortgage-amount-stack input {
+    padding-left: 3.5rem;
+}
+.calc__euro-sign,
+.calc__term-year-text,
+.calc__interest-percent-text {
+    color: var(--Slate700);
+    font-weight: 700;
+    background-color: var(--Slate100);
+    padding: .3rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 45px;
+    padding-inline: 1rem;
+}
+.calc__euro-sign {
+    left: 1px;
+    border-radius: .2rem 0 0 .2rem;
+}
+.calc__term-year-text, 
+.calc__interest-percent-text {
+    right: 1px;
+    border-radius: 0 .2rem .2rem 0;
+}
+.calc__mortgage-amount-stack,
+.calc__term-stack,
+.calc__interest-stack {
+    display: flex;
+    align-items: center;
+}
+/* mortgage type section */
+fieldset {
+    width: 100%;
+    border: none;
+    padding: 0;
+} 
+fieldset > * {
+    width: 100%;
+}
+.calc__radio-stack div label {
+    border: 1px solid var(--Slate500);
+    border-radius: .3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 1rem;
+}
+.calc__radio-stack {
+    margin-top: .7rem;
+}
+.calc__radio-stack label {
+    height: 47px;
+}
+input[type="radio"] {
+    accent-color: var(--Lime);
+}
+.calc__radio-stack label {
+    transition: border-color .3s ease,
+                background-color .3s ease;
+}
+.calc__radio-stack label:hover,
+.calc__radio-stack label:focus {
+    border-color: var(--Lime);
+    background-color: hsl(60, 72%, 93%);
+}
+/* submit button */
+.calc__btn-stack {
+    max-width: 316px;    
+    margin-inline: auto;
+    margin-block: 2rem .5rem;
+}
+.calc__submit {
+    background-color: var(--Lime);
+    border-radius: 2rem;
+    font-weight: 700;
+    color: var(--Slate900);
+    width: 100%;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    transition: opacity .3s ease;
+}
+.calc__submit:hover,
+.calc__submit:focus {
+    opacity: .8;
+}
+/* result */
+.result__max {
+    width: 100%;
+    background-color: var(--Slate900);
+}
+.result__wrap {
+    background-color: var(--Slate900);
+    color: var(--White);
+    text-align: center;
+    padding: 1.5rem;
+    max-width: 650px;
+    margin-inline: auto;
+}
+.result__title {
+    margin-block: 1em;
+}
+.result__descr,
+.result__completed-descr {
+    color: var(--Slate300);
+    line-height: 1.7;
+}
+/* completed result */
+.result__completed {
+    text-align: left;
+}
+.result__completed > * {
+    margin-bottom: .6em;
+}
+.result__completed-title {
+    font-size: 1.5rem;
+}
+.result__completed-board {
+    border-top: 3px solid var(--Lime);
+    border-radius: .5rem;
+    background-color: hsl(202, 56%, 12%);
+    padding: 1.5rem;
+    margin-top: 2.3rem;
+}
+hr {
+    border: none;
+    height: .05rem;
+    background-color: rgba(128, 128, 128, 0.405);
+    margin-block: 1rem;
+}
+.result__completed-subtitle {
+    color: var(--Slate300);
+}
+.result__completed-month {
+    color: var(--Lime);
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+.result__completed-total {
+    font-weight: 700;
+    font-size: 1.45rem;
+}
+.result__completed-board p + p {
+    margin-top: .5rem;
+}
+@media (min-width: 720px) {
+    body {
+        padding: 2rem;
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+    }
+    .container {
+        max-width: 688px;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0rem .5rem .7rem rgba(0, 0, 0, 0.059);
+    }
+    .calc__wrap {
+        padding: 2rem;
+        max-width: unset;
+    }
+    .calc__term-interest-stack {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1rem;
+    }
+    .calc__term-interest-stack > * {
+        margin: 0;
+        width: 100%;
+    }
+    .calc__btn-stack {
+        margin-inline: unset;
+    }
+}
+@media (min-width: 1000px) {
+    .container {
+        max-width: 1010px;
+        display: flex;
+        background-color: var(--White);
+    }
+    .calc__title-stack {
+        display: flex;
+        justify-content: space-between;
+    }
+    .result__max {
+        border-bottom-left-radius: 5rem;
+    }
+    .result__wrap {
+        padding-top: 6rem;
+    }
+    .result__completed {
+        padding-top: 2.5rem;
+        padding-inline: 2.5rem;
+    }
+    .result__completed-month {
+        font-size: 3.4rem;
+    }
+}
